@@ -9,6 +9,7 @@ import { useLoaderData } from 'react-router-dom';
 import Chefs from '../../../Pages/chefs/Chefs';
 const Home = () => {
   const chefs = useLoaderData();
+  
   console.log(chefs);
   return (
  <div>
@@ -69,11 +70,14 @@ const Home = () => {
 <div className='chef-card'>
   {
     chefs.map(chef=> <Chefs 
-    key={chef.chef_id}
+    key={chef.id}
     chef={chef}></Chefs> )
   }
 </div>
+<div>
+  <h3>Our Best Food</h3>
 
+</div>
  </div>
    
   );

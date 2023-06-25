@@ -1,0 +1,10 @@
+.image{
+  height: 360px;
+  margin: 0, auto;
+}
+.food-recipe{
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3;
+}

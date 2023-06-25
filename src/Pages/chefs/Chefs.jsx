@@ -1,24 +1,25 @@
 import React from 'react';
 import { Button, Card, CardGroup } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Chefs = ({chef}) => {
-const {chef_id,name, picture, experience,recipes,likes}= chef;
+const {id, name,image, ingredients,likes,experience, recipes, description, cookingMethod, img, ratting}= chef;
   return (
     <div className='container'>
              <CardGroup className='gap-3'>
       <Card className='mb-3'>
-        <Card.Img variant="top" src={picture}  />
+        <Card.Img variant="top" src={image}  />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>
-           <p>Years of experiece:{experience} </p>
-           <p>Number Of Recipe:{recipes} </p>
+          <p>{experience} Years Of experience</p>
+           <p>Number of Recipe {recipes.length} </p>
            <p>Likes:{likes} </p>
           </Card.Text>
         </Card.Body>
       
         <div className='d-flex justify-content-center'>
-        <Button className='w-50' variant="primary">View Recipe</Button>
+        <Link to ={`/chefs/${id}`}><Button variant="primary">View Recipe</Button></Link>
         </div>
         
       </Card>
